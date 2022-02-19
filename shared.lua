@@ -1,7 +1,7 @@
-exports('NetVarGetVariableMatches', function(match)
+exports('NetvarGetVariableMatches', function(match)
     local matches = {}
 
-    for variable, _ in pairs(NetworkVariables) do
+    for variable, _ in pairs(Variables) do
         if string.match(variable, match) then
             table.insert(matches, variable)
         end
