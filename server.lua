@@ -1,17 +1,18 @@
 Variables = {}
 
-exports('NetvarGetVariableValue', function(variable)
+exports("GetVariableValue", function(variable)
     return Variables[variable]
 end)
 
-exports('NetvarSetVariableValue', function(variable, value)
+exports("SetVariableValue", function(variable, value)
+    local oldValue = Variables[variable]
+    TriggerClientEvent("netvar:_Update", -1, variable, value, oldValue)
     Variables[variable] = value
-    TriggerClientEvent("Netvar:Update", -1, variable, value)
 end)
 
-RegisterNetEvent("Netvar:Sync", function()
+RegisterNetEvent("netvar:Sync", function()
     local src = source
     for variable, value in pairs(Variables) do
-        TriggerClientEvent("Netvar:Update", src, variable, value)
+        TriggerClientEvent("netvar:_Update", src, variable)
     end
 end)

@@ -1,4 +1,4 @@
-exports('NetvarGetVariableMatches', function(match)
+exports("GetVariableMatches", function(match)
     local matches = {}
 
     for variable, _ in pairs(Variables) do

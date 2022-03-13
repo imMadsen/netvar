@@ -7,5 +7,5 @@ version '1.0.0'
 lua54 'yes'
 games { "gta5", "rdr3" }
 
-client_scripts {"client.lua", "shared.lua"}
-server_scripts {"server.lua", "shared.lua"}
+client_script "client.lua"
+server_script "server.lua"

@@ -1,11 +1,12 @@
 Variables = {}
 
-exports('NetvarGetVariableValue', function(variable)
-    return Variables[variable]
+exports("GetVariableValue", function(variable, fallback)
+    return Variables[variable] or fallback
 end)
 
-RegisterNetEvent("Netvar:Update", function(variable, value)
+RegisterNetEvent("netvar:_Update", function(variable, value, oldValue)
     Variables[variable] = value
+    TriggerEvent("netvar:Update", variable, value, oldValue)
 end)
 
-TriggerServerEvent("Netvar:Sync")
+TriggerServerEvent("netvar:Sync")
