@@ -11,10 +11,12 @@ end
 
 RegisterNetEvent("netvar:_Update", function(variable, value, oldValue)
     Variables[variable] = value
+    TriggerEvent("netvar:Update", variable, value, oldValue)
 end)
 
 RegisterNetEvent("netvar:_UpdatePlayer", function(variable, value, oldValue)
     PlayerVariables[variable] = value
+    TriggerEvent("netvar:UpdatePlayer", variable, value, oldValue)
 end)
 
 TriggerServerEvent("netvar:Sync")
