@@ -1,12 +1,8 @@
-fx_version "cerulean"
+fx_version 'cerulean'
+game 'gta5'
 
-description "Netvar - Easiest way to Network Variables consistently!"
-author "imMadsen"
-version '1.0.0'
+author "Rasmus Madsen"
+description 'Lort...'
+version '2.0'
 
-lua54 'yes'
-games { "gta5", "rdr3" }
-
-client_script "client.lua"
-server_script "server.lua"
-escrow_ignore {"shared.lua", "client.lua", "server.lua"} 
+shared_script 'lib.lua'
