@@ -7,7 +7,7 @@ Netvar is  used to sync server variables with the client effortlessly
 
 #### Does it have to run in a thread
 
-Yes, due to us wanting to gurantee the variable it does have to run in a thread.
+Yes, due to us wanting to gurantee the variable it does have to run in a thread, though ONLY on the client.
 
 #### Isn't it dangerous to sync client and server variables
 
